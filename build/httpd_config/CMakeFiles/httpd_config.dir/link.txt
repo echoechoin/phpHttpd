@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhttpd_config.a  CMakeFiles/httpd_config.dir/CJsonObject.cpp.o CMakeFiles/httpd_config.dir/httpd-config.cpp.o CMakeFiles/httpd_config.dir/cJSON.c.o
+/usr/bin/ranlib libhttpd_config.a

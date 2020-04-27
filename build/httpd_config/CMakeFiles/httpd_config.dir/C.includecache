@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.c
+string.h
+-
+stdio.h
+-
+math.h
+-
+stdlib.h
+-
+float.h
+-
+limits.h
+-
+ctype.h
+-
+cJSON.h
+/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.h
+
+/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.h
+stdint.h
+-
+

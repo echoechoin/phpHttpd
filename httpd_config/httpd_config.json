@@ -1,0 +1,15 @@
+{
+  "server":{
+    "listenAddresss":"127.0.0.2",
+    "listenPort":8080,
+    "mode":"php"
+  },
+  "phpConfig":{
+    "entraceFilePath":"./",
+    "fastcigSocketFilePath":"./"
+  },
+  "debug":{
+    "logFilePath":"./debug",
+    "logMode":"stdout"
+  }
+}

@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/PhpHttpd.dir/main.cpp.o  -o PhpHttpd -rdynamic httpd_config/libhttpd_config.a -lpthread 

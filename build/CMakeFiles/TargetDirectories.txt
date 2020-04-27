@@ -1,0 +1,9 @@
+/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles/edit_cache.dir
+/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles/rebuild_cache.dir
+/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles/phpHttpd.dir
+/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/edit_cache.dir
+/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/rebuild_cache.dir
+/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/httpd_config.dir
+/home/echo/httpd_project/httpd-0.0.2/build/debug/CMakeFiles/edit_cache.dir
+/home/echo/httpd_project/httpd-0.0.2/build/debug/CMakeFiles/rebuild_cache.dir
+/home/echo/httpd_project/httpd-0.0.2/build/debug/CMakeFiles/debuger.dir
