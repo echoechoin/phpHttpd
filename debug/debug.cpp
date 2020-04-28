@@ -93,6 +93,7 @@ int Log::debug(std::string debug){
   if(Log::logMode == 1){
     ///< no permission
   }else{
-    std::cout << "[" << __FILE__ << ": " <<__LINE__ << "] " << debug << std::endl;
+    // std::cout << "[" << __FILE__ << ": " <<__LINE__ << "] " << debug << std::endl;
+    std::cout << ">>\033[36m"<< debug << "\033[0m" << std::endl;
   }
 }

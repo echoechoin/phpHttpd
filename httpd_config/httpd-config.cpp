@@ -94,7 +94,7 @@ std::string HttpdConfig::getLogFilePath(){
 /**
  * @brief 获取监听的IP地址
  * @return string
- * 返回监听的IP地址
+ * 返回监听的IP地址 点分十进制 例"127.0.0.1"
  */
 std::string HttpdConfig::getListenAddress(){
   return this->listenAddress;
