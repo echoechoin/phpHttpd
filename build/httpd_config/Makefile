@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/echo/httpd_project/httpd-0.0.2
+CMAKE_SOURCE_DIR = /home/echo/httpd_project/phpHttpd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/echo/httpd_project/httpd-0.0.2/build
+CMAKE_BINARY_DIR = /home/echo/httpd_project/phpHttpd/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles /home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/progress.marks
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 0
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles /home/echo/httpd_project/phpHttpd/build/httpd_config/CMakeFiles/progress.marks
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/clean
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/preinstall
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/preinstall
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 httpd_config/CMakeFiles/httpd_config.dir/rule:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/CMakeFiles/httpd_config.dir/rule
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 httpd_config/CMakeFiles/httpd_config.dir/rule
 .PHONY : httpd_config/CMakeFiles/httpd_config.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ httpd_config: httpd_config/CMakeFiles/httpd_config.dir/rule
 
 # fast build rule for target.
 httpd_config/fast:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/build
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/build
 .PHONY : httpd_config/fast
 
 CJsonObject.o: CJsonObject.cpp.o
@@ -131,7 +131,7 @@ CJsonObject.o: CJsonObject.cpp.o
 
 # target to build an object file
 CJsonObject.cpp.o:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o
 .PHONY : CJsonObject.cpp.o
 
 CJsonObject.i: CJsonObject.cpp.i
@@ -140,7 +140,7 @@ CJsonObject.i: CJsonObject.cpp.i
 
 # target to preprocess a source file
 CJsonObject.cpp.i:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.i
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.i
 .PHONY : CJsonObject.cpp.i
 
 CJsonObject.s: CJsonObject.cpp.s
@@ -149,7 +149,7 @@ CJsonObject.s: CJsonObject.cpp.s
 
 # target to generate assembly for a file
 CJsonObject.cpp.s:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.s
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.s
 .PHONY : CJsonObject.cpp.s
 
 cJSON.o: cJSON.c.o
@@ -158,7 +158,7 @@ cJSON.o: cJSON.c.o
 
 # target to build an object file
 cJSON.c.o:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o
 .PHONY : cJSON.c.o
 
 cJSON.i: cJSON.c.i
@@ -167,7 +167,7 @@ cJSON.i: cJSON.c.i
 
 # target to preprocess a source file
 cJSON.c.i:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.i
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.i
 .PHONY : cJSON.c.i
 
 cJSON.s: cJSON.c.s
@@ -176,7 +176,7 @@ cJSON.s: cJSON.c.s
 
 # target to generate assembly for a file
 cJSON.c.s:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.s
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.s
 .PHONY : cJSON.c.s
 
 httpd-config.o: httpd-config.cpp.o
@@ -185,7 +185,7 @@ httpd-config.o: httpd-config.cpp.o
 
 # target to build an object file
 httpd-config.cpp.o:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o
 .PHONY : httpd-config.cpp.o
 
 httpd-config.i: httpd-config.cpp.i
@@ -194,7 +194,7 @@ httpd-config.i: httpd-config.cpp.i
 
 # target to preprocess a source file
 httpd-config.cpp.i:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.i
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.i
 .PHONY : httpd-config.cpp.i
 
 httpd-config.s: httpd-config.cpp.s
@@ -203,7 +203,7 @@ httpd-config.s: httpd-config.cpp.s
 
 # target to generate assembly for a file
 httpd-config.cpp.s:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.s
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.s
 .PHONY : httpd-config.cpp.s
 
 # Help Target
@@ -235,6 +235,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

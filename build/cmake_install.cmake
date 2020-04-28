@@ -1,4 +1,4 @@
-# Install script for directory: /home/echo/httpd_project/httpd-0.0.2
+# Install script for directory: /home/echo/httpd_project/phpHttpd
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,8 +34,10 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/cmake_install.cmake")
-  include("/home/echo/httpd_project/httpd-0.0.2/build/debug/cmake_install.cmake")
+  include("/home/echo/httpd_project/phpHttpd/build/httpd_config/cmake_install.cmake")
+  include("/home/echo/httpd_project/phpHttpd/build/debug/cmake_install.cmake")
+  include("/home/echo/httpd_project/phpHttpd/build/event/cmake_install.cmake")
+  include("/home/echo/httpd_project/phpHttpd/build/http_request/cmake_install.cmake")
 
 endif()
 
@@ -47,5 +49,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/echo/httpd_project/httpd-0.0.2/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/echo/httpd_project/phpHttpd/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

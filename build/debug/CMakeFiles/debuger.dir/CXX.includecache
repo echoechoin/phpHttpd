@@ -46,13 +46,13 @@ stdlib.h
 CJsonObject.h
 ../debug/../httpd_config/CJsonObject.h
 
-/home/echo/httpd_project/httpd-0.0.2/debug/debug.cpp
+/home/echo/httpd_project/phpHttpd/debug/debug.cpp
 debug.h
-/home/echo/httpd_project/httpd-0.0.2/debug/debug.h
+/home/echo/httpd_project/phpHttpd/debug/debug.h
 
-/home/echo/httpd_project/httpd-0.0.2/debug/debug.h
+/home/echo/httpd_project/phpHttpd/debug/debug.h
 iostream
 -
 httpd-config.h
-/home/echo/httpd_project/httpd-0.0.2/debug/httpd-config.h
+/home/echo/httpd_project/phpHttpd/debug/httpd-config.h
 

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhttp_request.a  CMakeFiles/http_request.dir/http_request.cpp.o
+/usr/bin/ranlib libhttp_request.a

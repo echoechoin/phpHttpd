@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/echo/httpd_project/httpd-0.0.2
+CMAKE_SOURCE_DIR = /home/echo/httpd_project/phpHttpd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/echo/httpd_project/httpd-0.0.2/build
+CMAKE_BINARY_DIR = /home/echo/httpd_project/phpHttpd/build
 
 # Include any dependencies generated for this target.
 include httpd_config/CMakeFiles/httpd_config.dir/depend.make
@@ -59,16 +59,16 @@ include httpd_config/CMakeFiles/httpd_config.dir/flags.make
 
 httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o: httpd_config/CMakeFiles/httpd_config.dir/flags.make
 httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o: ../httpd_config/CJsonObject.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/httpd_config.dir/CJsonObject.cpp.o -c /home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o"
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/httpd_config.dir/CJsonObject.cpp.o -c /home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.cpp
 
 httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/httpd_config.dir/CJsonObject.cpp.i"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.cpp > CMakeFiles/httpd_config.dir/CJsonObject.cpp.i
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.cpp > CMakeFiles/httpd_config.dir/CJsonObject.cpp.i
 
 httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/httpd_config.dir/CJsonObject.cpp.s"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.cpp -o CMakeFiles/httpd_config.dir/CJsonObject.cpp.s
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.cpp -o CMakeFiles/httpd_config.dir/CJsonObject.cpp.s
 
 httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o.requires:
 
@@ -83,16 +83,16 @@ httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o.provides.build: httpd
 
 httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o: httpd_config/CMakeFiles/httpd_config.dir/flags.make
 httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o: ../httpd_config/httpd-config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/httpd_config.dir/httpd-config.cpp.o -c /home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o"
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/httpd_config.dir/httpd-config.cpp.o -c /home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.cpp
 
 httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/httpd_config.dir/httpd-config.cpp.i"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.cpp > CMakeFiles/httpd_config.dir/httpd-config.cpp.i
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.cpp > CMakeFiles/httpd_config.dir/httpd-config.cpp.i
 
 httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/httpd_config.dir/httpd-config.cpp.s"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.cpp -o CMakeFiles/httpd_config.dir/httpd-config.cpp.s
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.cpp -o CMakeFiles/httpd_config.dir/httpd-config.cpp.s
 
 httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o.requires:
 
@@ -107,16 +107,16 @@ httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o.provides.build: http
 
 httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o: httpd_config/CMakeFiles/httpd_config.dir/flags.make
 httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o: ../httpd_config/cJSON.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/httpd_config.dir/cJSON.c.o   -c /home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o"
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/httpd_config.dir/cJSON.c.o   -c /home/echo/httpd_project/phpHttpd/httpd_config/cJSON.c
 
 httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/httpd_config.dir/cJSON.c.i"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.c > CMakeFiles/httpd_config.dir/cJSON.c.i
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/echo/httpd_project/phpHttpd/httpd_config/cJSON.c > CMakeFiles/httpd_config.dir/cJSON.c.i
 
 httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/httpd_config.dir/cJSON.c.s"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.c -o CMakeFiles/httpd_config.dir/cJSON.c.s
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && /usr/bin/cc  $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/echo/httpd_project/phpHttpd/httpd_config/cJSON.c -o CMakeFiles/httpd_config.dir/cJSON.c.s
 
 httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o.requires:
 
@@ -143,9 +143,9 @@ httpd_config/libhttpd_config.a: httpd_config/CMakeFiles/httpd_config.dir/httpd-c
 httpd_config/libhttpd_config.a: httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o
 httpd_config/libhttpd_config.a: httpd_config/CMakeFiles/httpd_config.dir/build.make
 httpd_config/libhttpd_config.a: httpd_config/CMakeFiles/httpd_config.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libhttpd_config.a"
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && $(CMAKE_COMMAND) -P CMakeFiles/httpd_config.dir/cmake_clean_target.cmake
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/httpd_config.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX static library libhttpd_config.a"
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && $(CMAKE_COMMAND) -P CMakeFiles/httpd_config.dir/cmake_clean_target.cmake
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/httpd_config.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 httpd_config/CMakeFiles/httpd_config.dir/build: httpd_config/libhttpd_config.a
@@ -159,10 +159,10 @@ httpd_config/CMakeFiles/httpd_config.dir/requires: httpd_config/CMakeFiles/httpd
 .PHONY : httpd_config/CMakeFiles/httpd_config.dir/requires
 
 httpd_config/CMakeFiles/httpd_config.dir/clean:
-	cd /home/echo/httpd_project/httpd-0.0.2/build/httpd_config && $(CMAKE_COMMAND) -P CMakeFiles/httpd_config.dir/cmake_clean.cmake
+	cd /home/echo/httpd_project/phpHttpd/build/httpd_config && $(CMAKE_COMMAND) -P CMakeFiles/httpd_config.dir/cmake_clean.cmake
 .PHONY : httpd_config/CMakeFiles/httpd_config.dir/clean
 
 httpd_config/CMakeFiles/httpd_config.dir/depend:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/echo/httpd_project/httpd-0.0.2 /home/echo/httpd_project/httpd-0.0.2/httpd_config /home/echo/httpd_project/httpd-0.0.2/build /home/echo/httpd_project/httpd-0.0.2/build/httpd_config /home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/httpd_config.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/echo/httpd_project/phpHttpd /home/echo/httpd_project/phpHttpd/httpd_config /home/echo/httpd_project/phpHttpd/build /home/echo/httpd_project/phpHttpd/build/httpd_config /home/echo/httpd_project/phpHttpd/build/httpd_config/CMakeFiles/httpd_config.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : httpd_config/CMakeFiles/httpd_config.dir/depend
 

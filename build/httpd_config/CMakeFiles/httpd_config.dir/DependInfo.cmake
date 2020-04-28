@@ -5,7 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.c" "/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o"
+  "/home/echo/httpd_project/phpHttpd/httpd_config/cJSON.c" "/home/echo/httpd_project/phpHttpd/build/httpd_config/CMakeFiles/httpd_config.dir/cJSON.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -14,8 +14,8 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../httpd_config/."
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.cpp" "/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o"
-  "/home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.cpp" "/home/echo/httpd_project/httpd-0.0.2/build/httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o"
+  "/home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.cpp" "/home/echo/httpd_project/phpHttpd/build/httpd_config/CMakeFiles/httpd_config.dir/CJsonObject.cpp.o"
+  "/home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.cpp" "/home/echo/httpd_project/phpHttpd/build/httpd_config/CMakeFiles/httpd_config.dir/httpd-config.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

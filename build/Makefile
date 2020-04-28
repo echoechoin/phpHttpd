@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/echo/httpd_project/httpd-0.0.2
+CMAKE_SOURCE_DIR = /home/echo/httpd_project/phpHttpd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/echo/httpd_project/httpd-0.0.2/build
+CMAKE_BINARY_DIR = /home/echo/httpd_project/phpHttpd/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles /home/echo/httpd_project/phpHttpd/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,32 @@ debuger/fast:
 	$(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/build
 .PHONY : debuger/fast
 
+#=============================================================================
+# Target rules for targets named event_loop
+
+# Build rule for target.
+event_loop: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 event_loop
+.PHONY : event_loop
+
+# fast build rule for target.
+event_loop/fast:
+	$(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/build
+.PHONY : event_loop/fast
+
+#=============================================================================
+# Target rules for targets named http_request
+
+# Build rule for target.
+http_request: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 http_request
+.PHONY : http_request
+
+# fast build rule for target.
+http_request/fast:
+	$(MAKE) -f http_request/CMakeFiles/http_request.dir/build.make http_request/CMakeFiles/http_request.dir/build
+.PHONY : http_request/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -187,6 +213,8 @@ help:
 	@echo "... phpHttpd"
 	@echo "... httpd_config"
 	@echo "... debuger"
+	@echo "... event_loop"
+	@echo "... http_request"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -1,6 +1,6 @@
 {
   "server":{
-    "listenAddress":"127.0.0.2",
+    "listenAddresss":"127.0.0.2",
     "listenPort":8080,
     "mode":"php"
   },

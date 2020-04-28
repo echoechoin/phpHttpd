@@ -12,14 +12,19 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.5.1/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.5.1/CMakeSystem.cmake"
   "../debug/CMakeLists.txt"
+  "../event/CMakeLists.txt"
+  "../http_request/CMakeLists.txt"
   "../httpd_config/CMakeLists.txt"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCXXInformation.cmake"
+  "/usr/share/cmake-3.5/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCommonLanguageInclude.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeLanguageInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeSystemSpecificInitialize.cmake"
+  "/usr/share/cmake-3.5/Modules/CheckCXXCompilerFlag.cmake"
+  "/usr/share/cmake-3.5/Modules/CheckCXXSourceCompiles.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.5/Modules/Compiler/GNU.cmake"
@@ -41,6 +46,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "httpd_config/CMakeFiles/CMakeDirectoryInformation.cmake"
   "debug/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "event/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "http_request/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
@@ -48,4 +55,6 @@ set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/phpHttpd.dir/DependInfo.cmake"
   "httpd_config/CMakeFiles/httpd_config.dir/DependInfo.cmake"
   "debug/CMakeFiles/debuger.dir/DependInfo.cmake"
+  "event/CMakeFiles/event_loop.dir/DependInfo.cmake"
+  "http_request/CMakeFiles/http_request.dir/DependInfo.cmake"
   )

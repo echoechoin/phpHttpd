@@ -1,4 +1,4 @@
-# Install script for directory: /home/echo/httpd_project/httpd-0.0.2/httpd_config
+# Install script for directory: /home/echo/httpd_project/phpHttpd/httpd_config
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

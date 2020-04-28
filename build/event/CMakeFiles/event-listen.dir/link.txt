@@ -1,0 +1,2 @@
+/usr/bin/ar qc libevent-listen.a  CMakeFiles/event-listen.dir/event-listen.cpp.o
+/usr/bin/ranlib libevent-listen.a

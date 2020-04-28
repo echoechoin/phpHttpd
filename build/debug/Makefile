@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/echo/httpd_project/httpd-0.0.2
+CMAKE_SOURCE_DIR = /home/echo/httpd_project/phpHttpd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/echo/httpd_project/httpd-0.0.2/build
+CMAKE_BINARY_DIR = /home/echo/httpd_project/phpHttpd/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles /home/echo/httpd_project/httpd-0.0.2/build/debug/CMakeFiles/progress.marks
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 debug/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 0
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles /home/echo/httpd_project/phpHttpd/build/debug/CMakeFiles/progress.marks
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 debug/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 debug/clean
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 debug/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 debug/preinstall
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 debug/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 debug/preinstall
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 debug/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 debug/CMakeFiles/debuger.dir/rule:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f CMakeFiles/Makefile2 debug/CMakeFiles/debuger.dir/rule
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f CMakeFiles/Makefile2 debug/CMakeFiles/debuger.dir/rule
 .PHONY : debug/CMakeFiles/debuger.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ debuger: debug/CMakeFiles/debuger.dir/rule
 
 # fast build rule for target.
 debuger/fast:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/build
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/build
 .PHONY : debuger/fast
 
 debug.o: debug.cpp.o
@@ -131,7 +131,7 @@ debug.o: debug.cpp.o
 
 # target to build an object file
 debug.cpp.o:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/debug.cpp.o
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/debug.cpp.o
 .PHONY : debug.cpp.o
 
 debug.i: debug.cpp.i
@@ -140,7 +140,7 @@ debug.i: debug.cpp.i
 
 # target to preprocess a source file
 debug.cpp.i:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/debug.cpp.i
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/debug.cpp.i
 .PHONY : debug.cpp.i
 
 debug.s: debug.cpp.s
@@ -149,7 +149,7 @@ debug.s: debug.cpp.s
 
 # target to generate assembly for a file
 debug.cpp.s:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/debug.cpp.s
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/debug.cpp.s
 .PHONY : debug.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/echo/httpd_project/httpd-0.0.2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/echo/httpd_project/phpHttpd/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

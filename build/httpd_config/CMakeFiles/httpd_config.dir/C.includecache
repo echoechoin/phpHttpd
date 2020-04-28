@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.c
+/home/echo/httpd_project/phpHttpd/httpd_config/cJSON.c
 string.h
 -
 stdio.h
@@ -22,9 +22,9 @@ limits.h
 ctype.h
 -
 cJSON.h
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.h
+/home/echo/httpd_project/phpHttpd/httpd_config/cJSON.h
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.h
+/home/echo/httpd_project/phpHttpd/httpd_config/cJSON.h
 stdint.h
 -
 

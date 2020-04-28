@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.cpp
+/home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.cpp
 CJsonObject.h
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.h
+/home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.h
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.h
+/home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.h
 stdio.h
 -
 stddef.h
@@ -30,17 +30,17 @@ map
 list
 -
 cJSON.h
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.h
+/home/echo/httpd_project/phpHttpd/httpd_config/cJSON.h
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/cJSON.h
+/home/echo/httpd_project/phpHttpd/httpd_config/cJSON.h
 stdint.h
 -
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.cpp
+/home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.cpp
 httpd-config.h
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.h
+/home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.h
 
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/httpd-config.h
+/home/echo/httpd_project/phpHttpd/httpd_config/httpd-config.h
 string
 -
 iostream
@@ -52,5 +52,5 @@ fstream
 stdlib.h
 -
 CJsonObject.h
-/home/echo/httpd_project/httpd-0.0.2/httpd_config/CJsonObject.h
+/home/echo/httpd_project/phpHttpd/httpd_config/CJsonObject.h
 

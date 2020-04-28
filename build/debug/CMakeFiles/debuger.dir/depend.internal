@@ -5,5 +5,5 @@ debug/CMakeFiles/debuger.dir/debug.cpp.o
  ../debug/../httpd_config/CJsonObject.h
  ../debug/../httpd_config/cJSON.h
  ../debug/../httpd_config/httpd-config.h
- /home/echo/httpd_project/httpd-0.0.2/debug/debug.cpp
- /home/echo/httpd_project/httpd-0.0.2/debug/debug.h
+ /home/echo/httpd_project/phpHttpd/debug/debug.cpp
+ /home/echo/httpd_project/phpHttpd/debug/debug.h

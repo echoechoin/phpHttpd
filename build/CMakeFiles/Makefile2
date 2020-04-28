@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/echo/httpd_project/httpd-0.0.2
+CMAKE_SOURCE_DIR = /home/echo/httpd_project/phpHttpd
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/echo/httpd_project/httpd-0.0.2/build
+CMAKE_BINARY_DIR = /home/echo/httpd_project/phpHttpd/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/phpHttpd.dir
@@ -65,9 +65,11 @@ CMAKE_BINARY_DIR = /home/echo/httpd_project/httpd-0.0.2/build
 # All Build rule for target.
 CMakeFiles/phpHttpd.dir/all: httpd_config/CMakeFiles/httpd_config.dir/all
 CMakeFiles/phpHttpd.dir/all: debug/CMakeFiles/debuger.dir/all
+CMakeFiles/phpHttpd.dir/all: event/CMakeFiles/event_loop.dir/all
+CMakeFiles/phpHttpd.dir/all: http_request/CMakeFiles/http_request.dir/all
 	$(MAKE) -f CMakeFiles/phpHttpd.dir/build.make CMakeFiles/phpHttpd.dir/depend
 	$(MAKE) -f CMakeFiles/phpHttpd.dir/build.make CMakeFiles/phpHttpd.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=7,8 "Built target phpHttpd"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=11,12 "Built target phpHttpd"
 .PHONY : CMakeFiles/phpHttpd.dir/all
 
 # Include target in all.
@@ -77,9 +79,9 @@ all: CMakeFiles/phpHttpd.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/phpHttpd.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 12
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/phpHttpd.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
 .PHONY : CMakeFiles/phpHttpd.dir/rule
 
 # Convenience name for target.
@@ -122,7 +124,7 @@ httpd_config/preinstall:
 httpd_config/CMakeFiles/httpd_config.dir/all:
 	$(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/depend
 	$(MAKE) -f httpd_config/CMakeFiles/httpd_config.dir/build.make httpd_config/CMakeFiles/httpd_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=3,4,5,6 "Built target httpd_config"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=7,8,9,10 "Built target httpd_config"
 .PHONY : httpd_config/CMakeFiles/httpd_config.dir/all
 
 # Include target in all.
@@ -132,9 +134,9 @@ all: httpd_config/CMakeFiles/httpd_config.dir/all
 
 # Build rule for subdir invocation for target.
 httpd_config/CMakeFiles/httpd_config.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 httpd_config/CMakeFiles/httpd_config.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
 .PHONY : httpd_config/CMakeFiles/httpd_config.dir/rule
 
 # Convenience name for target.
@@ -177,7 +179,7 @@ debug/preinstall:
 debug/CMakeFiles/debuger.dir/all: httpd_config/CMakeFiles/httpd_config.dir/all
 	$(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/depend
 	$(MAKE) -f debug/CMakeFiles/debuger.dir/build.make debug/CMakeFiles/debuger.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles --progress-num=1,2 "Built target debuger"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=1,2 "Built target debuger"
 .PHONY : debug/CMakeFiles/debuger.dir/all
 
 # Include target in all.
@@ -187,9 +189,9 @@ all: debug/CMakeFiles/debuger.dir/all
 
 # Build rule for subdir invocation for target.
 debug/CMakeFiles/debuger.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 debug/CMakeFiles/debuger.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/httpd-0.0.2/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
 .PHONY : debug/CMakeFiles/debuger.dir/rule
 
 # Convenience name for target.
@@ -204,6 +206,118 @@ debug/CMakeFiles/debuger.dir/clean:
 
 # clean rule for target.
 clean: debug/CMakeFiles/debuger.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory event
+
+# Convenience name for "all" pass in the directory.
+event/all: event/CMakeFiles/event_loop.dir/all
+
+.PHONY : event/all
+
+# Convenience name for "clean" pass in the directory.
+event/clean: event/CMakeFiles/event_loop.dir/clean
+
+.PHONY : event/clean
+
+# Convenience name for "preinstall" pass in the directory.
+event/preinstall:
+
+.PHONY : event/preinstall
+
+#=============================================================================
+# Target rules for target event/CMakeFiles/event_loop.dir
+
+# All Build rule for target.
+event/CMakeFiles/event_loop.dir/all: httpd_config/CMakeFiles/httpd_config.dir/all
+event/CMakeFiles/event_loop.dir/all: debug/CMakeFiles/debuger.dir/all
+	$(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/depend
+	$(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=3,4 "Built target event_loop"
+.PHONY : event/CMakeFiles/event_loop.dir/all
+
+# Include target in all.
+all: event/CMakeFiles/event_loop.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+event/CMakeFiles/event_loop.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 event/CMakeFiles/event_loop.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
+.PHONY : event/CMakeFiles/event_loop.dir/rule
+
+# Convenience name for target.
+event_loop: event/CMakeFiles/event_loop.dir/rule
+
+.PHONY : event_loop
+
+# clean rule for target.
+event/CMakeFiles/event_loop.dir/clean:
+	$(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/clean
+.PHONY : event/CMakeFiles/event_loop.dir/clean
+
+# clean rule for target.
+clean: event/CMakeFiles/event_loop.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory http_request
+
+# Convenience name for "all" pass in the directory.
+http_request/all: http_request/CMakeFiles/http_request.dir/all
+
+.PHONY : http_request/all
+
+# Convenience name for "clean" pass in the directory.
+http_request/clean: http_request/CMakeFiles/http_request.dir/clean
+
+.PHONY : http_request/clean
+
+# Convenience name for "preinstall" pass in the directory.
+http_request/preinstall:
+
+.PHONY : http_request/preinstall
+
+#=============================================================================
+# Target rules for target http_request/CMakeFiles/http_request.dir
+
+# All Build rule for target.
+http_request/CMakeFiles/http_request.dir/all: httpd_config/CMakeFiles/httpd_config.dir/all
+http_request/CMakeFiles/http_request.dir/all: debug/CMakeFiles/debuger.dir/all
+	$(MAKE) -f http_request/CMakeFiles/http_request.dir/build.make http_request/CMakeFiles/http_request.dir/depend
+	$(MAKE) -f http_request/CMakeFiles/http_request.dir/build.make http_request/CMakeFiles/http_request.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=5,6 "Built target http_request"
+.PHONY : http_request/CMakeFiles/http_request.dir/all
+
+# Include target in all.
+all: http_request/CMakeFiles/http_request.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+http_request/CMakeFiles/http_request.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 8
+	$(MAKE) -f CMakeFiles/Makefile2 http_request/CMakeFiles/http_request.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/echo/httpd_project/phpHttpd/build/CMakeFiles 0
+.PHONY : http_request/CMakeFiles/http_request.dir/rule
+
+# Convenience name for target.
+http_request: http_request/CMakeFiles/http_request.dir/rule
+
+.PHONY : http_request
+
+# clean rule for target.
+http_request/CMakeFiles/http_request.dir/clean:
+	$(MAKE) -f http_request/CMakeFiles/http_request.dir/build.make http_request/CMakeFiles/http_request.dir/clean
+.PHONY : http_request/CMakeFiles/http_request.dir/clean
+
+# clean rule for target.
+clean: http_request/CMakeFiles/http_request.dir/clean
 
 .PHONY : clean
 
