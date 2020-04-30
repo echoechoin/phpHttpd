@@ -59,7 +59,11 @@ map
 -
 debug.h
 .././http_request/debug.h
+sys/types.h
+-
 regex.h
+-
+vector
 -
 
 .././httpd_config/CJsonObject.h
@@ -115,4 +119,6 @@ event_loop.h
 /home/echo/httpd_project/phpHttpd/event_loop.h
 http_request.h
 /home/echo/httpd_project/phpHttpd/http_request.h
+map
+-
 

@@ -1,7 +1,9 @@
 #include <string>
 #include <map>
 #include "debug.h"
+#include <sys/types.h>
 #include <regex.h>
+#include <vector>
 #ifndef HTTP_REQUEST
 #define HTTP_REQUEST
 
@@ -14,12 +16,13 @@ class HttpRequest{
     bool isParsed(); // 判断是否解析成功
 
     /* 先获取一些简单的 */
-    std::string getMethod();
+    std::string getMethod();  
     std::string getUrl();
     std::string getHost();
+    std::string getPath();
 
-    std::map<std::string,std::string> getParams();
-    std::map<std::string,std::string> postParams();
+    std::map<std::string,std::string> paramsOfget();
+    std::map<std::string,std::string> paramsOfPost();
 
     std::string getAgent();
     std::map<std::string,std::string> getCookies();
@@ -31,6 +34,7 @@ class HttpRequest{
     std::string method;
     std::string url;
     std::string host;
+    std::string path;
 
     std::map<std::string,std::string> get;
     std::map<std::string,std::string> post;
@@ -41,10 +45,8 @@ class HttpRequest{
     std::string accept_encoding;
 
     bool isURL(std::string url);
-    int getLineCount();
     std::string error;
     bool parseStatus;
-    int lineCount;
 };
 
 #endif
