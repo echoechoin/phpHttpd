@@ -3,8 +3,10 @@
 
 event/CMakeFiles/event_loop.dir/event_loop.cpp.o
  ../event/../debug/debug.h
+ ../event/../http_request/http_request.h
  ../event/../httpd_config/CJsonObject.h
  ../event/../httpd_config/cJSON.h
  ../event/../httpd_config/httpd-config.h
+ ../event/../response/response.h
  /home/echo/httpd_project/phpHttpd/event/event_loop.cpp
  /home/echo/httpd_project/phpHttpd/event/event_loop.h

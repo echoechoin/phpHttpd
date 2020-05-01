@@ -94,6 +94,7 @@ phpHttpd: httpd_config/libhttpd_config.a
 phpHttpd: debug/libdebuger.a
 phpHttpd: event/libevent_loop.a
 phpHttpd: http_request/libhttp_request.a
+phpHttpd: response/libresponse.a
 phpHttpd: debug/libdebuger.a
 phpHttpd: httpd_config/libhttpd_config.a
 phpHttpd: CMakeFiles/phpHttpd.dir/link.txt

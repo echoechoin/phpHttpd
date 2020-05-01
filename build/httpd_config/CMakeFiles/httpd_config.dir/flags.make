@@ -9,7 +9,7 @@ C_DEFINES =
 
 C_INCLUDES = -I/home/echo/httpd_project/phpHttpd/httpd_config/. 
 
-CXX_FLAGS =  -std=c++11  
+CXX_FLAGS =  
 
 CXX_DEFINES = 
 

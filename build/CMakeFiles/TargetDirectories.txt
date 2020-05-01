@@ -13,3 +13,6 @@
 /home/echo/httpd_project/phpHttpd/build/http_request/CMakeFiles/edit_cache.dir
 /home/echo/httpd_project/phpHttpd/build/http_request/CMakeFiles/rebuild_cache.dir
 /home/echo/httpd_project/phpHttpd/build/http_request/CMakeFiles/http_request.dir
+/home/echo/httpd_project/phpHttpd/build/response/CMakeFiles/edit_cache.dir
+/home/echo/httpd_project/phpHttpd/build/response/CMakeFiles/rebuild_cache.dir
+/home/echo/httpd_project/phpHttpd/build/response/CMakeFiles/response.dir

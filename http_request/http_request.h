@@ -21,10 +21,12 @@ class HttpRequest{
     std::string getHost();
     std::string getPath();
 
-    std::map<std::string,std::string> paramsOfget();
-    std::map<std::string,std::string> paramsOfPost();
+    std::map<std::string,std::string> paramsOfGet(); // TODO
+    std::map<std::string,std::string> paramsOfPost(); //TODO
+    std::string getContentType(); // TODO
+    unsigned int getContentLength(); // TODO
 
-    std::string getAgent();
+    std::string getAgent(); 
     std::map<std::string,std::string> getCookies();
 
     std::string getAccept();
@@ -38,6 +40,9 @@ class HttpRequest{
 
     std::map<std::string,std::string> get;
     std::map<std::string,std::string> post;
+    std::string contentType;
+    unsigned int contentLength;
+
     std::string agent;
 
     std::map<std::string,std::string> cookies;

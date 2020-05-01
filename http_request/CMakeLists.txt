@@ -6,3 +6,4 @@ include_directories(../httpd_config)
 
 add_library(http_request http_request.cpp)
 target_link_libraries(http_request debuger)
+target_link_libraries(http_request httpd_config)

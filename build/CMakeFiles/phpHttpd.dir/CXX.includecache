@@ -17,10 +17,18 @@ string
 -
 iostream
 -
+fstream
+-
+string.h
+-
 debug.h
 .././event/debug.h
 httpd-config.h
 .././event/httpd-config.h
+http_request.h
+.././event/http_request.h
+response.h
+.././event/response.h
 string
 -
 stdlib.h
@@ -105,6 +113,14 @@ stdlib.h
 -
 CJsonObject.h
 .././httpd_config/CJsonObject.h
+
+.././response/response.h
+stdio.h
+-
+string
+-
+iostream
+-
 
 /home/echo/httpd_project/phpHttpd/main.cpp
 string

@@ -1,12 +1,15 @@
 {
   "server":{
-    "listenAddresss":"127.0.0.2",
-    "listenPort":8080,
-    "mode":"php"
+    "listenAddresss":"192.168.31.200",
+    "listenPort":80,
+    "mode":"default"
   },
-  "phpConfig":{
+  "phpModeConfig":{
     "entraceFilePath":"./",
     "fastcigSocketFilePath":"./"
+  },
+  "defaultModeConfig":{
+    "rootPath":"./htdocs/"
   },
   "debug":{
     "logFilePath":"./debug",

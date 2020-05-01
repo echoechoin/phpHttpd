@@ -175,10 +175,10 @@ event-listen_LIB_DEPENDS:STATIC=general;event;
 event_listen_LIB_DEPENDS:STATIC=general;event;
 
 //Dependencies for the target
-event_loop_LIB_DEPENDS:STATIC=general;event;general;debuger;
+event_loop_LIB_DEPENDS:STATIC=general;event;general;debuger;general;http_request;general;httpd_config;general;response;
 
 //Dependencies for the target
-http_request_LIB_DEPENDS:STATIC=general;debuger;
+http_request_LIB_DEPENDS:STATIC=general;debuger;general;httpd_config;
 
 //Dependencies for the target
 httpd_config_LIB_DEPENDS:STATIC=general;pthread;
@@ -188,6 +188,9 @@ phpHttpd_BINARY_DIR:STATIC=/home/echo/httpd_project/phpHttpd/build
 
 //Value Computed by CMake
 phpHttpd_SOURCE_DIR:STATIC=/home/echo/httpd_project/phpHttpd
+
+//Dependencies for the target
+response_LIB_DEPENDS:STATIC=general;debuger;
 
 
 ########################
@@ -280,7 +283,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=5
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

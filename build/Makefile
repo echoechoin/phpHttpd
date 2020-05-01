@@ -53,7 +53,6 @@ CMAKE_SOURCE_DIR = /home/echo/httpd_project/phpHttpd
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/echo/httpd_project/phpHttpd/build
 
-
 #=============================================================================
 # Targets provided globally by CMake.
 
@@ -176,6 +175,19 @@ http_request/fast:
 	$(MAKE) -f http_request/CMakeFiles/http_request.dir/build.make http_request/CMakeFiles/http_request.dir/build
 .PHONY : http_request/fast
 
+#=============================================================================
+# Target rules for targets named response
+
+# Build rule for target.
+response: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 response
+.PHONY : response
+
+# fast build rule for target.
+response/fast:
+	$(MAKE) -f response/CMakeFiles/response.dir/build.make response/CMakeFiles/response.dir/build
+.PHONY : response/fast
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -216,6 +228,7 @@ help:
 	@echo "... debuger"
 	@echo "... event_loop"
 	@echo "... http_request"
+	@echo "... response"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

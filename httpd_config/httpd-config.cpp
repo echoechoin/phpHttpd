@@ -43,7 +43,7 @@ HttpdConfig::HttpdConfig(){
     this->phpEntraceFilePath = configJsonObject["phpConfig"]("entraceFilePath") :
     this->phpEntraceFilePath = "./++++++++++++++++++++++++++++++++++++++++==";
   /* fcgi socket path */
-  configJsonObject["phpConfig"]("fastcigSocketFilePath").length() != 0 ?
+  configJsonObject["phpModeConfig"]("fastcigSocketFilePath").length() != 0 ?
     this->phpFastcigSocketFilePath = configJsonObject["phpConfig"]("fastcigSocketFilePath") :
     this->phpFastcigSocketFilePath = "./+++++++++++++++++++++++++++++++++++++++++";
 
@@ -55,6 +55,11 @@ HttpdConfig::HttpdConfig(){
   configJsonObject["debug"]("logFilePath").compare("stdout") || configJsonObject["debug"]("logFilePath").compare("default") ?
   this->logMode = configJsonObject["debug"]("logMode") :
   this->logMode = "default";
+
+  /* rootPath */
+  configJsonObject["defaultModeConfig"]("rootPath").length() != 0 ?
+  this->rootPath = configJsonObject["defaultModeConfig"]("rootPath") :
+  this->rootPath = "./htdocs";
 }
 HttpdConfig::~HttpdConfig(){
   std::cout << "destructor" << std::endl;
@@ -127,6 +132,9 @@ int HttpdConfig::getLogMode(){
   else 
     return 1;
 }
+std::string HttpdConfig::getRootPath(){
+  return this->rootPath;
+}
 void HttpdConfig::getAllConfig(){
   std::cout.setf(std::ios::left);
   std::cout.width(25); std::cout << "listenAddress" << this->listenAddress << std::endl;
@@ -136,5 +144,6 @@ void HttpdConfig::getAllConfig(){
   std::cout.width(25); std::cout << "phpEntraceFilePath" << this->phpEntraceFilePath << std::endl;
   std::cout.width(25); std::cout << "phpFastcigSocketFilePath" << this->phpFastcigSocketFilePath << std::endl;
   std::cout.width(25); std::cout << "serverMode" << this->serverMode << std::endl;
+  std::cout.width(25); std::cout << "serverMode" << this->rootPath << std::endl;
 
 }

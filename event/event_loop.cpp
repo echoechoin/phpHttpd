@@ -51,12 +51,45 @@ void EventLoop::event_listener_callback(struct evconnlistener *listener, evutil_
  *  @brief 处理http请求并响应浏览器
  */
 void EventLoop::read_cb(struct bufferevent *bev, void *arg){
+  std::cout << "---new connection---" << std::endl;
   struct evbuffer *bufferInput = bufferevent_get_input(bev);
   int inputLen = evbuffer_get_length(bufferInput);
   const char *pBody = (const char *)evbuffer_pullup(bufferInput, inputLen);
   std::string requestEntity(pBody);
-  std::string response;
-  bufferevent_write(bev, response.c_str(), response.length()+1);
+   HttpdConfig *c = HttpdConfig::getInstance();
+  HttpRequest r(requestEntity);
+  if(!r.isParsed()){
+    std::cout << r.getParseError() << std::endl;
+  }
+ 
+  if(c->getServerMode().compare("default") == 0){ ///< 普通静态服务器模式
+    Response res;
+    std::string rootPath = c->getRootPath();
+    std::string path = r.getPath();
+    path.erase(path.begin());
+    std::string realPath = rootPath + path;
+    std::ifstream fs;
+    fs.open(realPath.c_str());
+    std::cout << fs << std::endl;
+    std::cout <<  realPath << std::endl;
+    if(!fs){ // 不存在 发送404
+      std::cout << "404" << std::endl;
+      bufferevent_write(bev,res.getStatus(404).c_str(),res.getStatus(404).length());
+      bufferevent_write(bev,"\r\n",3);
+    }else{
+      bufferevent_write(bev,res.getStatus(200).c_str(),res.getStatus(200).length());
+      bufferevent_write(bev,res.getContenType(path).c_str(),res.getContenType(path).length());
+      bufferevent_write(bev,"\r\n",2); ///< 空行
+      while(!fs.eof()){
+        char data[1024];
+        fs.read(data,sizeof(data));
+        bufferevent_write(bev,data,strlen(data));
+      }
+    }
+    // 通过reponse类响应
+  }else if(c->getServerMode().compare("php") == 0){
+    ///< php mode...
+  }
 }
  
 /**
@@ -64,6 +97,7 @@ void EventLoop::read_cb(struct bufferevent *bev, void *arg){
  */
 void EventLoop::write_cb(struct bufferevent *bev, void *arg){
   Log::debug("我是写缓冲区的回调函数...您已发送\n"); 
+  bufferevent_free(bev);
 }
  
 /**

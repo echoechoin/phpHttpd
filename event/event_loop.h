@@ -1,7 +1,11 @@
 #include <string>
 #include <iostream>
+#include <fstream>
+#include <string.h>
 #include "debug.h"
 #include "httpd-config.h"
+#include "http_request.h"
+#include "response.h"
 #include <string>
 #include <stdlib.h> 
 #include <unistd.h> 

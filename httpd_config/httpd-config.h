@@ -16,6 +16,7 @@ class HttpdConfig{
     unsigned int getListenPort();
     std::string getServerMode();
     std::string getLogFilePath();
+    std::string getRootPath();
     int getLogMode();
     void getAllConfig();
   private:
@@ -29,6 +30,8 @@ class HttpdConfig{
     std::string phpEntraceFilePath;              ///< php入口文件路径
     std::string phpFastcigSocketFilePath;        ///< php fastcgi本地套接字路径
     std::string serverMode;                      ///< 是否为php模式 php：指定php入口地址，default：指定文件跟路径
+
+    std::string rootPath;                        ///< 静态web服务器的根路径
 
     std::string logFilePath;                     ///< 日志文件保存地址
     std::string logMode;                         ///< 文件还是直接输出日志 stdout | file

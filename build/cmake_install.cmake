@@ -38,6 +38,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/echo/httpd_project/phpHttpd/build/debug/cmake_install.cmake")
   include("/home/echo/httpd_project/phpHttpd/build/event/cmake_install.cmake")
   include("/home/echo/httpd_project/phpHttpd/build/http_request/cmake_install.cmake")
+  include("/home/echo/httpd_project/phpHttpd/build/response/cmake_install.cmake")
 
 endif()
 

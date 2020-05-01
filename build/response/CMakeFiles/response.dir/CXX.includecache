@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/echo/httpd_project/phpHttpd/response/response.cpp
+response.h
+/home/echo/httpd_project/phpHttpd/response/response.h
+
+/home/echo/httpd_project/phpHttpd/response/response.h
+stdio.h
+-
+string
+-
+iostream
+-
+

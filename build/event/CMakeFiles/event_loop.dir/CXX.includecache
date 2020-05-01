@@ -12,6 +12,20 @@ iostream
 httpd-config.h
 ../event/../debug/httpd-config.h
 
+../event/../http_request/http_request.h
+string
+-
+map
+-
+debug.h
+../event/../http_request/debug.h
+sys/types.h
+-
+regex.h
+-
+vector
+-
+
 ../event/../httpd_config/CJsonObject.h
 stdio.h
 -
@@ -52,6 +66,14 @@ stdlib.h
 CJsonObject.h
 ../event/../httpd_config/CJsonObject.h
 
+../event/../response/response.h
+stdio.h
+-
+string
+-
+iostream
+-
+
 /home/echo/httpd_project/phpHttpd/event/event_loop.cpp
 event_loop.h
 /home/echo/httpd_project/phpHttpd/event/event_loop.h
@@ -61,10 +83,18 @@ string
 -
 iostream
 -
+fstream
+-
+string.h
+-
 debug.h
 /home/echo/httpd_project/phpHttpd/event/debug.h
 httpd-config.h
 /home/echo/httpd_project/phpHttpd/event/httpd-config.h
+http_request.h
+/home/echo/httpd_project/phpHttpd/event/http_request.h
+response.h
+/home/echo/httpd_project/phpHttpd/event/response.h
 string
 -
 stdlib.h

@@ -65,7 +65,7 @@ HttpRequest::HttpRequest(std::string request){
     lineNum++;
     if(it == lines.begin())continue;
 
-    if((*it).length() == 0){
+    if(line.length() == 0){
       isRequestHead = false;
     }
     ///< 请求头处理
@@ -167,8 +167,7 @@ std::string HttpRequest::getPath(){
     return this->path;
   }
   if(this->url.length() != 0){
-    std::size_t host_start = this->url.find('/') + 2;
-    std::size_t path_start = this->url.find('/',host_start);
+    std::size_t path_start = 0;
     std::size_t path_end = this->url.find('?',path_start);
     if(path_end != this->url.npos)
       this->path = this->url.substr(path_start,path_end-path_start);
@@ -180,18 +179,7 @@ std::string HttpRequest::getPath(){
   return this->path;
 }
 bool  HttpRequest::isURL(std::string url){
-  regex_t reg;
-  std::string pattern = "^((https|http|ftp|rtsp|mms)?:\\/\\/)[^\\s]+";
-  if(0 != regcomp(&reg, pattern.c_str(), REG_EXTENDED)){  ///< 编译正则表达式
-    std::cout << "regerr";
-  }
-  size_t nmatch = 10;
-  regmatch_t pmatch[10];
-  regexec(&reg, url.c_str(), nmatch,pmatch, 0);          ///< 匹配
-  regfree(&reg);
-  if(pmatch[0].rm_so == 0 && pmatch[0].rm_eo == url.length())
-    return true;
-  return false;
+  return true;
 }
 std::string HttpRequest::getAgent(){
   return this->agent;

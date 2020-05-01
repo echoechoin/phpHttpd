@@ -13,12 +13,16 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../event/."
   "../event/../debug"
   "../event/../httpd_config"
+  "../event/../http_request"
+  "../event/../response"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/echo/httpd_project/phpHttpd/build/debug/CMakeFiles/debuger.dir/DependInfo.cmake"
+  "/home/echo/httpd_project/phpHttpd/build/http_request/CMakeFiles/http_request.dir/DependInfo.cmake"
   "/home/echo/httpd_project/phpHttpd/build/httpd_config/CMakeFiles/httpd_config.dir/DependInfo.cmake"
+  "/home/echo/httpd_project/phpHttpd/build/response/CMakeFiles/response.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.
