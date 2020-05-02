@@ -7,10 +7,9 @@
 #include <map>
 
 int main ( int argc, char *argv[] ){
-  Log::enable(); ///< 初始化Loger
-  Log::debug("------------------debug message-----------------");
+ //  Log::enable(); ///< 初始化Loger
   
-  // HttpRequest *r = new HttpRequest(std::string("GET /123/ HTTP/1.1\r\n")   
+  // HttpRequest *r = new HttpRequest(std::string("POST /123/?id=123&qq=1233 HTTP/1.1\r\n")   
   //   + std::string("Accept: application/json, text/javascript, */*; q=0.01\n")
   //   + std::string("X-Requested-With: XMLHttpRequest\r\n")
   //   + std::string("Referer: https://testrail-tools.trendmicro.com/portal/admin/toLicenseTimerConfig?id=7\r\n")
@@ -33,16 +32,18 @@ int main ( int argc, char *argv[] ){
   //   std::cout << "agent "<< r->getAgent() << "EOL" << std::endl;
   //   std::cout << "accept "<< r->getAccept() << "EOL" << std::endl;
   //   std::cout << "accept-encoding "<< r->getAcceptEncoding() << "EOL" << std::endl;
-  //   if(r->getMethod() == "GET"){
+  //   if(r->getMethod().compare("GET") == 0){
+  //     std::cout << "get params:" << std::endl;
   //     std::map<std::string,std::string> Params = r->paramsOfGet();
   //     for(std::map<std::string,std::string>::iterator it = Params.begin();it != Params.end(); it++){
-  //       std::cout << (*it).first << ":" << (*it).second << std::endl;
+  //       std::cout << (*it).first << ":" << (*it).second << "EOL" << std::endl;
   //     }
   //   }
-  //   if(r->getMethod() == "POST"){
+  //   if(r->getMethod().compare("POST") == 0){
   //     std::cout << "content-length " << r->getContentLength() << "EOL" << std::endl;
   //     std::cout << "conten-type " << r->getContentType() << "EOL" << std::endl;
   //     std::map<std::string,std::string> Params = r->paramsOfPost();
+  //     std::cout << "post params:" << std::endl;
   //     for(std::map<std::string,std::string>::iterator it = Params.begin();it != Params.end(); it++){
   //       std::cout << (*it).first << ":" << (*it).second << "EOL" << std::endl;
   //     }

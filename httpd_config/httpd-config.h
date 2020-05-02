@@ -17,6 +17,7 @@ class HttpdConfig{
     std::string getServerMode();
     std::string getLogFilePath();
     std::string getRootPath();
+    std::string getDefaultFile();
     int getLogMode();
     void getAllConfig();
   private:
@@ -33,8 +34,11 @@ class HttpdConfig{
 
     std::string rootPath;                        ///< 静态web服务器的根路径
 
+    std::string defaultFile;                     ///< 默认打开的文件
+
     std::string logFilePath;                     ///< 日志文件保存地址
     std::string logMode;                         ///< 文件还是直接输出日志 stdout | file
+    
 };
 
 #endif

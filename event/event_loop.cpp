@@ -56,36 +56,42 @@ void EventLoop::read_cb(struct bufferevent *bev, void *arg){
   int inputLen = evbuffer_get_length(bufferInput);
   const char *pBody = (const char *)evbuffer_pullup(bufferInput, inputLen);
   std::string requestEntity(pBody);
-   HttpdConfig *c = HttpdConfig::getInstance();
+  HttpdConfig *c = HttpdConfig::getInstance();
   HttpRequest r(requestEntity);
+  Response res;
   if(!r.isParsed()){
     std::cout << r.getParseError() << std::endl;
+    bufferevent_free(bev);
+    return;
   }
- 
   if(c->getServerMode().compare("default") == 0){ ///< 普通静态服务器模式
-    Response res;
     std::string rootPath = c->getRootPath();
     std::string path = r.getPath();
     path.erase(path.begin());
+    if(path.length() == 0){
+      path = c->getDefaultFile();
+    }
     std::string realPath = rootPath + path;
-    std::ifstream fs;
-    fs.open(realPath.c_str());
-    std::cout << fs << std::endl;
+    int fd = open(realPath.c_str(),O_RDONLY);
     std::cout <<  realPath << std::endl;
-    if(!fs){ // 不存在 发送404
+    if(!fd){ // 不存在 发送404
       std::cout << "404" << std::endl;
       bufferevent_write(bev,res.getStatus(404).c_str(),res.getStatus(404).length());
       bufferevent_write(bev,"\r\n",3);
+      close(fd);
+      return;
     }else{
-      bufferevent_write(bev,res.getStatus(200).c_str(),res.getStatus(200).length());
-      bufferevent_write(bev,res.getContenType(path).c_str(),res.getContenType(path).length());
+      bufferevent_write(bev,res.getStatus(200).c_str(),res.getStatus(200).length()); ///< 获取状态码
+      bufferevent_write(bev,res.getContenType(path).c_str(),res.getContenType(path).length()); ///< 获取content-type
       bufferevent_write(bev,"\r\n",2); ///< 空行
-      while(!fs.eof()){
-        char data[1024];
-        fs.read(data,sizeof(data));
+      char data[1024];
+      while(0 < read(fd,data,sizeof(data))){
         bufferevent_write(bev,data,strlen(data));
+        memset(data,0,sizeof(data));
       }
-    }
+      close(fd);
+      return;
+    }    
     // 通过reponse类响应
   }else if(c->getServerMode().compare("php") == 0){
     ///< php mode...
@@ -96,7 +102,7 @@ void EventLoop::read_cb(struct bufferevent *bev, void *arg){
  *  @brief 暂时无用
  */
 void EventLoop::write_cb(struct bufferevent *bev, void *arg){
-  Log::debug("我是写缓冲区的回调函数...您已发送\n"); 
+  std::cout <<"---disconnected---" << std::endl;
   bufferevent_free(bev);
 }
  

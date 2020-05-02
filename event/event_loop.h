@@ -21,6 +21,8 @@
 #include <netinet/in.h> 
 #include <arpa/inet.h>
 #include <stdio.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 #ifndef EVENT_LOOP_H
 #define EVENT_LOOP_H
 

@@ -60,6 +60,11 @@ HttpdConfig::HttpdConfig(){
   configJsonObject["defaultModeConfig"]("rootPath").length() != 0 ?
   this->rootPath = configJsonObject["defaultModeConfig"]("rootPath") :
   this->rootPath = "./htdocs";
+
+  /* defaultFile */
+  configJsonObject["defaultModeConfig"]("defaultFile").length() != 0 ?
+  this->defaultFile = configJsonObject["defaultModeConfig"]("defaultFile") :
+  this->defaultFile = "index.html";
 }
 HttpdConfig::~HttpdConfig(){
   std::cout << "destructor" << std::endl;
@@ -134,6 +139,9 @@ int HttpdConfig::getLogMode(){
 }
 std::string HttpdConfig::getRootPath(){
   return this->rootPath;
+}
+std::string HttpdConfig::getDefaultFile(){
+  return this->defaultFile;
 }
 void HttpdConfig::getAllConfig(){
   std::cout.setf(std::ios::left);

@@ -125,4 +125,8 @@ arpa/inet.h
 -
 stdio.h
 -
+sys/stat.h
+-
+fcntl.h
+-
 

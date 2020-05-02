@@ -59,6 +59,10 @@ arpa/inet.h
 -
 stdio.h
 -
+sys/stat.h
+-
+fcntl.h
+-
 
 .././http_request/http_request.h
 string

@@ -1,8 +1,86 @@
 #include "http_request.h"
-
+namespace urldecode{
+  char dec2hexChar(short int n) {
+  if ( 0 <= n && n <= 9 ) {
+    return char( short('0') + n );
+    } else if ( 10 <= n && n <= 15 ) {
+      return char( short('A') + n - 10 );
+    } else {
+      return char(0);
+    }
+  }
+  
+  short int hexChar2dec(char c) {
+  if ( '0'<=c && c<='9' ) {
+    return short(c-'0');
+    } else if ( 'a'<=c && c<='f' ) {
+      return ( short(c-'a') + 10 );
+    } else if ( 'A'<=c && c<='F' ) {
+      return ( short(c-'A') + 10 );
+    } else {
+      return -1;
+    }
+  }
+  
+  std::string escapeURL(const std::string &URL)
+  {
+    std::string result = "";
+    for ( unsigned int i=0; i<URL.size(); i++ ) {
+      char c = URL[i];
+      if (
+      ( '0'<=c && c<='9' ) ||
+      ( 'a'<=c && c<='z' ) ||
+      ( 'A'<=c && c<='Z' ) ||
+      c=='/' || c=='.'
+      ) {
+      result += c;
+      } else {
+      int j = (short int)c;
+      if ( j < 0 ) {
+        j += 256;
+      }
+      int i1, i0;
+      i1 = j / 16;
+      i0 = j - i1*16;
+      result += '%';
+      result += dec2hexChar(i1);
+      result += dec2hexChar(i0);
+      }
+    }
+    return result;
+  }
+  
+  std::string deescapeURL(const std::string &URL) {
+    std::string result = "";
+    for ( unsigned int i=0; i<URL.size(); i++ ) {
+      char c = URL[i];
+      if ( c != '%' ) {
+      result += c;
+      } else {
+      char c1 = URL[++i];
+      char c0 = URL[++i];
+      int num = 0;
+      num += hexChar2dec(c1) * 16 + hexChar2dec(c0);
+      result += char(num);
+      }
+    }
+    return result;
+  }
+  
+  int example()
+  {
+    std::string str = "你好 世界";
+    std::string temp = escapeURL(str);
+    std::cout<<temp<<std::endl;
+    std::cout<<deescapeURL(temp)<<std::endl;
+    getchar();
+    return 0;
+  }
+}
+HttpRequest::~HttpRequest(){};
 HttpRequest::HttpRequest(std::string request){
-  this->request = request;
-  // std::cout << this->request << std::endl;
+   this->request = request;
+  //std::cout << this->request << std::endl;
   ///< 初始化所有的成员
   this->method = "";
   this->url ="";
@@ -24,8 +102,6 @@ HttpRequest::HttpRequest(std::string request){
   if(this->getMethod() == "")
     goto step;
   if(this->getUrl() == "")
-    goto step;
-  if(this->getHost() == "")
     goto step;
   if(this->getPath() == "")
     goto step;
@@ -88,14 +164,54 @@ HttpRequest::HttpRequest(std::string request){
         this->accept = value;
       }else if(key.compare("Accept-Encoding") == 0){
         this->accept_encoding = value;
+      }else if(key.compare("Content-Type") == 0){
+        this->contentType = value;
+      }else if(key.compare("Content-Length") == 0){
+        this->contentLength = atoi(value.c_str());
+      }else if(key.compare("Host") == 0){
+        this->host = atoi(value.c_str());
       }
       // std::cout << (line).substr(0, middlePos) << ": ";
       // std::cout << (line).substr(middlePos+2, (line).length()) << std::endl;
     }
 
     ///< 请求体处理
-    else{ 
+    else if(this->method.compare("POST") == 0){ 
+      if(line.length() == 0)
+        continue;
+      if(this->getContentType().compare("application/x-www-form-urlencoded") == 0){ ///< 普通post请求
+        std::string paramsStr = line;
+        std::map<std::string,std::string> t;
+        unsigned int start = 0;
+        unsigned int end = 0;
 
+        std::string kv;
+        while(true){
+          if(paramsStr.find('&',start) == paramsStr.npos){
+            kv = paramsStr.substr(start,paramsStr.length()-start);
+            // std::cout << kv << std::endl;
+            if(kv.find('=') == kv.npos)
+              break;
+            std::string k = kv.substr(0,kv.find('='));
+            std::string v = kv.substr(kv.find('=')+1,kv.length()-kv.find('=')-1);
+            //std::cout << k << v << std::endl;
+            t.insert(std::pair<std::string,std::string>(urldecode::deescapeURL(k),urldecode::deescapeURL(v)));
+            break;
+          }else{
+            end = paramsStr.find('&',start);
+            kv = paramsStr.substr(start,end-start);
+          //  std::cout << kv << std::endl;
+            if(kv.find('=') == kv.npos)
+              break;
+            std::string k = kv.substr(0,kv.find('='));
+            std::string v = kv.substr(kv.find('=')+1,kv.length()-kv.find('=')-1);
+            //std::cout << k << v << std::endl;
+           t.insert(std::pair<std::string,std::string>(urldecode::deescapeURL(k),urldecode::deescapeURL(v)));
+          }
+          start = end+1;
+        }
+        this->post = t;
+      }
     }
   }
 
@@ -150,16 +266,6 @@ std::string HttpRequest::getParseError(){
   return this->error;
 }
 std::string HttpRequest::getHost(){
-  if(this->host.length() != 0){
-    return this->host;
-  }
-  if(this->url.length() != 0){
-    std::size_t start = this->url.find('/') + 2;
-    std::size_t end = this->url.find('/',start);
-    this->host = this->url.substr(start,end-start);
-  }
-  this->parseStatus = false;
-  this->error = "Invalid url";
   return this->host; 
 }
 std::string HttpRequest::getPath(){
@@ -190,7 +296,13 @@ std::string HttpRequest::getAccept(){
 std::string HttpRequest::getAcceptEncoding(){
   return this->accept_encoding;
 }
-std::map<std::string,std::string> HttpRequest::paramsOfget(){
+unsigned int HttpRequest::getContentLength(){
+  return this->contentLength;
+}
+std::string HttpRequest::getContentType(){
+  return this->contentType;
+}
+std::map<std::string,std::string> HttpRequest::paramsOfGet(){
   std::map<std::string,std::string> t;
   if(this->url.find('?') == this->url.npos){
     return t;
@@ -208,17 +320,28 @@ std::map<std::string,std::string> HttpRequest::paramsOfget(){
     if(paramsStr.find('&',start) == paramsStr.npos){
       kv = paramsStr.substr(start,paramsStr.length()-start);
       // std::cout << kv << std::endl;
-      
-
+      if(kv.find('=') == kv.npos)
+        break;
+      std::string k = kv.substr(0,kv.find('='));
+      std::string v = kv.substr(kv.find('=')+1,kv.length()-kv.find('=')-1);
+      //std::cout << k << v << std::endl;
+      t.insert(std::pair<std::string,std::string>(urldecode::deescapeURL(k),urldecode::deescapeURL(v)));
       break;
     }else{
       end = paramsStr.find('&',start);
       kv = paramsStr.substr(start,end-start);
-      // std::cout << kv << std::endl;
-
-
+     //  std::cout << kv << std::endl;
+      if(kv.find('=') == kv.npos)
+        break;
+      std::string k = kv.substr(0,kv.find('='));
+      std::string v = kv.substr(kv.find('=')+1,kv.length()-kv.find('=')-1);
+      //std::cout << k << v << std::endl;
+      t.insert(std::pair<std::string,std::string>(urldecode::deescapeURL(k),urldecode::deescapeURL(v)));;
     }
     start = end+1;
   }
   return t;
+}
+std::map<std::string,std::string> HttpRequest::paramsOfPost(){
+  return this->post;
 }
