@@ -9,4 +9,11 @@ event/CMakeFiles/event_loop.dir/event_loop.cpp.o: ../event/../httpd_config/httpd
 event/CMakeFiles/event_loop.dir/event_loop.cpp.o: ../event/../response/response.h
 event/CMakeFiles/event_loop.dir/event_loop.cpp.o: ../event/event_loop.cpp
 event/CMakeFiles/event_loop.dir/event_loop.cpp.o: ../event/event_loop.h
+event/CMakeFiles/event_loop.dir/event_loop.cpp.o: ../event/fastcgi.h
+event/CMakeFiles/event_loop.dir/event_loop.cpp.o: ../event/fcgi.h
+
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o: ../event/../response/response.h
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o: ../event/fastcgi.h
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o: ../event/fcgi.cpp
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o: ../event/fcgi.h
 

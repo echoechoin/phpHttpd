@@ -63,6 +63,26 @@ sys/stat.h
 -
 fcntl.h
 -
+fastcgi.h
+.././event/fastcgi.h
+fcgi.h
+.././event/fcgi.h
+
+.././event/fastcgi.h
+
+.././event/fcgi.h
+fastcgi.h
+.././event/fastcgi.h
+event2/event.h
+-
+event2/listener.h
+-
+event2/bufferevent.h
+-
+event2/buffer.h
+-
+response.h
+.././event/response.h
 
 .././http_request/http_request.h
 string

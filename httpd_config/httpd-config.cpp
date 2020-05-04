@@ -59,12 +59,22 @@ HttpdConfig::HttpdConfig(){
   /* rootPath */
   configJsonObject["defaultModeConfig"]("rootPath").length() != 0 ?
   this->rootPath = configJsonObject["defaultModeConfig"]("rootPath") :
-  this->rootPath = "./htdocs";
+  this->rootPath = "./htdocs/";
 
   /* defaultFile */
   configJsonObject["defaultModeConfig"]("defaultFile").length() != 0 ?
   this->defaultFile = configJsonObject["defaultModeConfig"]("defaultFile") :
   this->defaultFile = "index.html";
+
+  /* phpEntraceFilePath */
+  configJsonObject["phpModeConfig"]("entraceFilePath").length() != 0 ?
+  this->phpEntraceFilePath = configJsonObject["phpModeConfig"]("entraceFilePath") :
+  this->phpEntraceFilePath = "./htdocs/";
+
+  /*  phpEntraceFileName */
+  configJsonObject["phpModeConfig"]("entraceFileName").length() != 0 ?
+  this->phpEntraceFileName = configJsonObject["phpModeConfig"]("entraceFileName") :
+  this->phpEntraceFileName = "index.php";
 }
 HttpdConfig::~HttpdConfig(){
   std::cout << "destructor" << std::endl;
@@ -143,7 +153,13 @@ std::string HttpdConfig::getRootPath(){
 std::string HttpdConfig::getDefaultFile(){
   return this->defaultFile;
 }
-void HttpdConfig::getAllConfig(){
+std::string HttpdConfig::getEntraceFilePath(){
+  return this->phpEntraceFilePath;
+}
+std::string HttpdConfig::getEntraceFileName(){
+  return this->phpEntraceFileName;
+}
+void HttpdConfig::configCheck(){
   std::cout.setf(std::ios::left);
   std::cout.width(25); std::cout << "listenAddress" << this->listenAddress << std::endl;
   std::cout.width(25); std::cout << "listenPort" << this->listenPort << std::endl;
@@ -153,5 +169,4 @@ void HttpdConfig::getAllConfig(){
   std::cout.width(25); std::cout << "phpFastcigSocketFilePath" << this->phpFastcigSocketFilePath << std::endl;
   std::cout.width(25); std::cout << "serverMode" << this->serverMode << std::endl;
   std::cout.width(25); std::cout << "serverMode" << this->rootPath << std::endl;
-
 }

@@ -80,7 +80,7 @@ namespace urldecode{
 HttpRequest::~HttpRequest(){};
 HttpRequest::HttpRequest(std::string request){
    this->request = request;
-  //std::cout << this->request << std::endl;
+ // std::cout << this->request << std::endl;
   ///< 初始化所有的成员
   this->method = "";
   this->url ="";
@@ -181,6 +181,7 @@ HttpRequest::HttpRequest(std::string request){
         continue;
       if(this->getContentType().compare("application/x-www-form-urlencoded") == 0){ ///< 普通post请求
         std::string paramsStr = line;
+        this->postQueryString = line;
         std::map<std::string,std::string> t;
         unsigned int start = 0;
         unsigned int end = 0;
@@ -301,6 +302,17 @@ unsigned int HttpRequest::getContentLength(){
 }
 std::string HttpRequest::getContentType(){
   return this->contentType;
+}
+std::string HttpRequest::queryStrOfGet(){
+  std::string queryStr;
+  if(this->url.find('?') == this->url.npos){
+    return queryStr;
+  }
+  queryStr = this->url.substr(this->url.find('?')+1,this->url.length()-this->url.find('?')-1);
+  return queryStr;
+}
+std::string HttpRequest::queryStrOfPost(){
+  return this->postQueryString;
 }
 std::map<std::string,std::string> HttpRequest::paramsOfGet(){
   std::map<std::string,std::string> t;

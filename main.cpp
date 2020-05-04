@@ -51,7 +51,9 @@ int main ( int argc, char *argv[] ){
   // }else{
   //   Log::debug(r->getParseError());
   // }
-
+  HttpdConfig::httpdConfigInit();
+  HttpdConfig *c = HttpdConfig::getInstance();
+  c->configCheck();
   EventLoop e;
   e.startup();
   return 0;

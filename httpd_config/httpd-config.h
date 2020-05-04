@@ -18,8 +18,10 @@ class HttpdConfig{
     std::string getLogFilePath();
     std::string getRootPath();
     std::string getDefaultFile();
+    std::string getEntraceFilePath();
+    std::string getEntraceFileName();
     int getLogMode();
-    void getAllConfig();
+    void configCheck();
   private:
     HttpdConfig();
 
@@ -29,6 +31,7 @@ class HttpdConfig{
     std::string listenAddress;                   ///< 监听地址
 
     std::string phpEntraceFilePath;              ///< php入口文件路径
+    std::string phpEntraceFileName;              ///< php入口文件
     std::string phpFastcigSocketFilePath;        ///< php fastcgi本地套接字路径
     std::string serverMode;                      ///< 是否为php模式 php：指定php入口地址，default：指定文件跟路径
 

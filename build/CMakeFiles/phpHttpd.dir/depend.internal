@@ -4,6 +4,8 @@
 CMakeFiles/phpHttpd.dir/main.cpp.o
  .././debug/debug.h
  .././event/event_loop.h
+ .././event/fastcgi.h
+ .././event/fcgi.h
  .././http_request/http_request.h
  .././httpd_config/CJsonObject.h
  .././httpd_config/cJSON.h

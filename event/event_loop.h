@@ -23,6 +23,9 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+
+#include "fastcgi.h"
+#include "fcgi.h"
 #ifndef EVENT_LOOP_H
 #define EVENT_LOOP_H
 

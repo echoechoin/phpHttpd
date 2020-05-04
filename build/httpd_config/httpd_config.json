@@ -1,19 +1,24 @@
 {
+  "comment":{
+    "0":"在path的结尾务必加上/",
+    "1":"..."
+  },
   "server":{
-    "listenAddresss":"192.168.31.200",
+    "listenAddress":"192.168.31.200",
     "listenPort":80,
-    "mode":"default"
+    "mode":"php"
   },
   "phpModeConfig":{
-    "entraceFilePath":"./",
-    "fastcigSocketFilePath":"./"
+    "entraceFilePath":"./htdocs/",
+    "entraceFileName":"index.php",
+    "fastcigSocketFilePath":"/run/php/"
   },
   "defaultModeConfig":{
     "defaultFile":"index.html",
     "rootPath":"./htdocs/"
   },
   "debug":{
-    "logFilePath":"./debug",
+    "logFilePath":"./debug/",
     "logMode":"stdout"
   }
 }

@@ -152,6 +152,33 @@ event_loop.cpp.s:
 	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/event_loop.cpp.s
 .PHONY : event_loop.cpp.s
 
+fcgi.o: fcgi.cpp.o
+
+.PHONY : fcgi.o
+
+# target to build an object file
+fcgi.cpp.o:
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/fcgi.cpp.o
+.PHONY : fcgi.cpp.o
+
+fcgi.i: fcgi.cpp.i
+
+.PHONY : fcgi.i
+
+# target to preprocess a source file
+fcgi.cpp.i:
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/fcgi.cpp.i
+.PHONY : fcgi.cpp.i
+
+fcgi.s: fcgi.cpp.s
+
+.PHONY : fcgi.s
+
+# target to generate assembly for a file
+fcgi.cpp.s:
+	cd /home/echo/httpd_project/phpHttpd/build && $(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/fcgi.cpp.s
+.PHONY : fcgi.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -164,6 +191,9 @@ help:
 	@echo "... event_loop.o"
 	@echo "... event_loop.i"
 	@echo "... event_loop.s"
+	@echo "... fcgi.o"
+	@echo "... fcgi.i"
+	@echo "... fcgi.s"
 .PHONY : help
 
 

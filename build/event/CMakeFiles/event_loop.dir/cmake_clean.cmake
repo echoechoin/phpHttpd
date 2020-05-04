@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/event_loop.dir/event_loop.cpp.o"
+  "CMakeFiles/event_loop.dir/fcgi.cpp.o"
   "libevent_loop.pdb"
   "libevent_loop.a"
 )

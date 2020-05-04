@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/echo/httpd_project/phpHttpd/event/event_loop.cpp" "/home/echo/httpd_project/phpHttpd/build/event/CMakeFiles/event_loop.dir/event_loop.cpp.o"
+  "/home/echo/httpd_project/phpHttpd/event/fcgi.cpp" "/home/echo/httpd_project/phpHttpd/build/event/CMakeFiles/event_loop.dir/fcgi.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

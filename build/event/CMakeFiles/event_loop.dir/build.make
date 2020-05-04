@@ -81,17 +81,43 @@ event/CMakeFiles/event_loop.dir/event_loop.cpp.o.provides: event/CMakeFiles/even
 event/CMakeFiles/event_loop.dir/event_loop.cpp.o.provides.build: event/CMakeFiles/event_loop.dir/event_loop.cpp.o
 
 
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o: event/CMakeFiles/event_loop.dir/flags.make
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o: ../event/fcgi.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object event/CMakeFiles/event_loop.dir/fcgi.cpp.o"
+	cd /home/echo/httpd_project/phpHttpd/build/event && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/event_loop.dir/fcgi.cpp.o -c /home/echo/httpd_project/phpHttpd/event/fcgi.cpp
+
+event/CMakeFiles/event_loop.dir/fcgi.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/event_loop.dir/fcgi.cpp.i"
+	cd /home/echo/httpd_project/phpHttpd/build/event && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/echo/httpd_project/phpHttpd/event/fcgi.cpp > CMakeFiles/event_loop.dir/fcgi.cpp.i
+
+event/CMakeFiles/event_loop.dir/fcgi.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/event_loop.dir/fcgi.cpp.s"
+	cd /home/echo/httpd_project/phpHttpd/build/event && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/echo/httpd_project/phpHttpd/event/fcgi.cpp -o CMakeFiles/event_loop.dir/fcgi.cpp.s
+
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o.requires:
+
+.PHONY : event/CMakeFiles/event_loop.dir/fcgi.cpp.o.requires
+
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o.provides: event/CMakeFiles/event_loop.dir/fcgi.cpp.o.requires
+	$(MAKE) -f event/CMakeFiles/event_loop.dir/build.make event/CMakeFiles/event_loop.dir/fcgi.cpp.o.provides.build
+.PHONY : event/CMakeFiles/event_loop.dir/fcgi.cpp.o.provides
+
+event/CMakeFiles/event_loop.dir/fcgi.cpp.o.provides.build: event/CMakeFiles/event_loop.dir/fcgi.cpp.o
+
+
 # Object files for target event_loop
 event_loop_OBJECTS = \
-"CMakeFiles/event_loop.dir/event_loop.cpp.o"
+"CMakeFiles/event_loop.dir/event_loop.cpp.o" \
+"CMakeFiles/event_loop.dir/fcgi.cpp.o"
 
 # External object files for target event_loop
 event_loop_EXTERNAL_OBJECTS =
 
 event/libevent_loop.a: event/CMakeFiles/event_loop.dir/event_loop.cpp.o
+event/libevent_loop.a: event/CMakeFiles/event_loop.dir/fcgi.cpp.o
 event/libevent_loop.a: event/CMakeFiles/event_loop.dir/build.make
 event/libevent_loop.a: event/CMakeFiles/event_loop.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libevent_loop.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/echo/httpd_project/phpHttpd/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libevent_loop.a"
 	cd /home/echo/httpd_project/phpHttpd/build/event && $(CMAKE_COMMAND) -P CMakeFiles/event_loop.dir/cmake_clean_target.cmake
 	cd /home/echo/httpd_project/phpHttpd/build/event && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/event_loop.dir/link.txt --verbose=$(VERBOSE)
 
@@ -101,6 +127,7 @@ event/CMakeFiles/event_loop.dir/build: event/libevent_loop.a
 .PHONY : event/CMakeFiles/event_loop.dir/build
 
 event/CMakeFiles/event_loop.dir/requires: event/CMakeFiles/event_loop.dir/event_loop.cpp.o.requires
+event/CMakeFiles/event_loop.dir/requires: event/CMakeFiles/event_loop.dir/fcgi.cpp.o.requires
 
 .PHONY : event/CMakeFiles/event_loop.dir/requires
 

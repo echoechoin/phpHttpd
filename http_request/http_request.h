@@ -23,6 +23,9 @@ class HttpRequest{
 
     std::map<std::string,std::string> paramsOfGet(); // TODO
     std::map<std::string,std::string> paramsOfPost(); //TODO
+    std::string queryStrOfGet();
+    std::string queryStrOfPost();
+
     std::string getContentType(); // TODO
     unsigned int getContentLength(); // TODO
 
@@ -40,6 +43,8 @@ class HttpRequest{
 
     std::map<std::string,std::string> get;
     std::map<std::string,std::string> post;
+    std::string postQueryString;
+    
     std::string contentType;
     unsigned int contentLength;
 

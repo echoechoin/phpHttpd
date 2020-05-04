@@ -6,7 +6,7 @@ include_directories(../httpd_config)
 include_directories(../http_request)
 include_directories(../response)
 
-add_library(event_loop event_loop.cpp)
+add_library(event_loop event_loop.cpp fcgi.cpp)
 target_link_libraries(event_loop event)
 target_link_libraries(event_loop debuger)
 target_link_libraries(event_loop http_request)
