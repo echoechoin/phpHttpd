@@ -1,9 +1,9 @@
 # introduce
-this project is a simple web server with php fast cgi.
+this project is a simple web server with php fast-cgi.
 
 # install
 ```bash
-git clone https://github.com/echoechoin/phpHttpd
+git clone https://github.com/echoechoin/phpHttpd.git
 cd bulid
 cmake ..
 make
