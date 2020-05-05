@@ -13,6 +13,9 @@ event/CMakeFiles/event_loop.dir/event_loop.cpp.o
  /home/echo/httpd_project/phpHttpd/event/fastcgi.h
  /home/echo/httpd_project/phpHttpd/event/fcgi.h
 event/CMakeFiles/event_loop.dir/fcgi.cpp.o
+ ../event/../httpd_config/CJsonObject.h
+ ../event/../httpd_config/cJSON.h
+ ../event/../httpd_config/httpd-config.h
  ../event/../response/response.h
  /home/echo/httpd_project/phpHttpd/event/fastcgi.h
  /home/echo/httpd_project/phpHttpd/event/fcgi.cpp

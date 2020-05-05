@@ -83,6 +83,8 @@ event2/buffer.h
 -
 response.h
 .././event/response.h
+httpd-config.h
+.././event/httpd-config.h
 
 .././http_request/http_request.h
 string

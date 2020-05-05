@@ -1,8 +1,9 @@
 #include "debug.h"
-
+#include <unistd.h>
 int Log::logMode = 1;
 std::string Log::logFilePath;
 bool Log::isEnabled = false;
+bool Log::isEnableDebug = true;
 /**
  * @brief Log构造函数，主要用于Enable/Disable Logger
  * @param isEnable 是否启动Logger
@@ -32,6 +33,14 @@ int Log::disable(){
   Log *tmp = new Log(false);
   delete tmp;
   return 0;
+}
+// 默认enable
+int Log::enableDebug(){
+  Log::isEnableDebug = true;
+}
+int Log::disableDebug(){ 
+  Log::isEnableDebug = false;
+  daemon(1,0);
 }
 /**
  * @brief info 记录
@@ -87,13 +96,16 @@ int Log::error(std::string error){
  *  0 表示成功 -1 表示没有启动Logger
  */
 int Log::debug(std::string debug){
-  if(!isEnabled){
+  if(!Log::isEnabled ){
+    return -1;
+  }
+  if(!Log::isEnableDebug){
     return -1;
   }
   if(Log::logMode == 1){
     ///< no permission
   }else{
     // std::cout << "[" << __FILE__ << ": " <<__LINE__ << "] " << debug << std::endl;
-    std::cout << ">>\033[36m"<< debug << "\033[0m" << std::endl;
+    std::cout << ">> \033[36m"<< debug << "\033[0m" << std::endl;
   }
 }

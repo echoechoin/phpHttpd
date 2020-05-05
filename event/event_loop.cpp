@@ -1,4 +1,5 @@
 #include "event_loop.h"
+#include "debug.h"
 /**
  *  @brief 启动事件循环，监听 listenAddress:port
  *  @return 0 或 -1
@@ -20,13 +21,18 @@ int EventLoop::startup(){
   // create event_connection_listerner     
   listener = evconnlistener_new_bind(       
     base,       
-    EventLoop::event_listener_callback,      
+    EventLoop::event_listener_callback,
     base,       
     LEV_OPT_CLOSE_ON_FREE | LEV_OPT_REUSEABLE,       
     36,       
     (struct sockaddr*)&sock_addr,       
-    sizeof(sock_addr)     
+    sizeof(sock_addr) 
   ); 
+  if(listener == NULL){
+    Log::debug("evconnlistener_new_bind  error: ");
+    perror("");
+    exit(-1);
+  }
             
   // dispatch base     
   event_base_dispatch(base);     
@@ -51,7 +57,7 @@ void EventLoop::event_listener_callback(struct evconnlistener *listener, evutil_
  *  @brief 处理http请求并响应浏览器
  */
 void EventLoop::read_cb(struct bufferevent *bev, void *arg){
-  std::cout << "---new connection---" << std::endl;
+  Log::debug("----newConnection---");
   char data[1024];
   std::string requestEntity;
   int len = bufferevent_read(bev,data,sizeof(data)-1);
@@ -66,9 +72,10 @@ void EventLoop::read_cb(struct bufferevent *bev, void *arg){
   HttpdConfig *c = HttpdConfig::getInstance();
   HttpRequest r(requestEntity);
   Response res;
-
+  Log::debug(std::string("--------url:     ") + r.getUrl());
+  Log::debug(std::string("--------method:  ") + r.getMethod());
   if(!r.isParsed()){
-    std::cout << r.getParseError() << std::endl;
+    Log::error(std::string("url parse error: ") + r.getParseError());
     bufferevent_free(bev);
     return;
   }
@@ -120,7 +127,7 @@ staticServer:
       int fd = open(realPath.c_str(),O_RDONLY);
       if(fd<0){
         bufferevent_write(bev,res.getStatus(404).c_str(),res.getStatus(404).length());
-        std::cout << "404" << std::endl;
+        Log::debug("--------404");
         return;
       }
       close(fd);
@@ -128,7 +135,7 @@ staticServer:
       cgi = (FastCgi_t *)malloc(sizeof(FastCgi_t));
       FastCgi_init(cgi);
       setRequestId(cgi,1);
-      startConnect(cgi);
+      startConnect(cgi,c);
       sendStartRequestRecord(cgi);
       char cwd[1024] = {0};
       getcwd(cwd,1024);
@@ -163,13 +170,14 @@ staticServer:
       FastCgi_finit(cgi);
     }
   }
+  Log::debug("---endOfNewConnection");
 }
  
 /**
  *  @brief free bufferevent
  */
 void EventLoop::write_cb(struct bufferevent *bev, void *arg){
-  std::cout <<"---disconnected---" << std::endl;
+  Log::debug("----disconnected---");
   bufferevent_free(bev);
 }
  

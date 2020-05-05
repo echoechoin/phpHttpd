@@ -77,6 +77,8 @@ iostream
 /home/echo/httpd_project/phpHttpd/event/event_loop.cpp
 event_loop.h
 /home/echo/httpd_project/phpHttpd/event/event_loop.h
+debug.h
+/home/echo/httpd_project/phpHttpd/event/debug.h
 
 /home/echo/httpd_project/phpHttpd/event/event_loop.h
 string
@@ -165,6 +167,8 @@ netinet/in.h
 -
 errno.h
 -
+httpd-config.h
+-
 
 /home/echo/httpd_project/phpHttpd/event/fcgi.h
 fastcgi.h
@@ -179,4 +183,6 @@ event2/buffer.h
 -
 response.h
 /home/echo/httpd_project/phpHttpd/event/response.h
+httpd-config.h
+/home/echo/httpd_project/phpHttpd/event/httpd-config.h
 

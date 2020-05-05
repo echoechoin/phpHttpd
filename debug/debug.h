@@ -5,7 +5,9 @@
 class Log{
   public:
     static int enable();
+    static int enableDebug();
     static int disable();
+    static int disableDebug();
     static int info(std::string info);
     static int warning(std::string warning);
     static int error(std::string error);
@@ -14,6 +16,7 @@ class Log{
     Log(bool);
     static int logMode;                  ///< 0：日志输出到stdout, 1：日志输出到file
     static std::string logFilePath;      ///< 日志输出文件地址
-    static bool isEnabled;               ///< 是否启动了debuger
+    static bool isEnabled;               ///< 是否启动了Log
+    static bool isEnableDebug;
 };
 #endif

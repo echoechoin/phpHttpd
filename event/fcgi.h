@@ -7,6 +7,7 @@
 #include <event2/bufferevent.h> 
 #include <event2/buffer.h>
 #include "response.h"
+#include "httpd-config.h"
 typedef struct 
 {
     int sockfd_;        //与php-fpm 建立的 sockfd
@@ -39,7 +40,7 @@ int makeNameValueBody(char *name, int nameLen,
 char *getIpFromConf(void);
 
 //连接php-fpm，如果成功则返回对应的套接字描述符
-void startConnect(FastCgi_t *c);
+void startConnect(FastCgi_t *c, HttpdConfig *cfg);
 
 //发送开始请求记录
 int sendStartRequestRecord(FastCgi_t *c);

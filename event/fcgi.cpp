@@ -18,6 +18,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <errno.h>
+#include <httpd-config.h>
 
 
 static const int PARAMS_BUFF_LEN = 1024;    //环境参数buffer的大小
@@ -150,7 +151,7 @@ char *getIpFromConf()
 /**
  * @brief 初始化本地套接字
  */ 
-void startConnect(FastCgi_t *c)
+void startConnect(FastCgi_t *c,HttpdConfig *cfg)
 {
     int sockfd;
     int result;
@@ -158,7 +159,7 @@ void startConnect(FastCgi_t *c)
     struct sockaddr_un address;
     sockfd = socket(AF_UNIX, SOCK_STREAM, 0);
     address.sun_family = AF_UNIX;
-    strcpy (address.sun_path, "/run/php/php7.0-fpm.sock");
+    strcpy (address.sun_path, cfg->getPhpSocketFile().c_str());
     len = sizeof (address);
     result = connect (sockfd, (struct sockaddr *)&address, len);
     if(result != 0){
@@ -255,7 +256,6 @@ int readFromPhp(FastCgi_t *c,struct bufferevent *bev)
             /* 获取内容长度 */
             contentLen = (responderHeader.contentLengthB1 << 8) + (responderHeader.contentLengthB0);
             bzero(content, CONTENT_BUFF_LEN);
-            std::cout << contentLen << std::endl;
             /* 读取获取内容 */
             int times = contentLen / CONTENT_BUFF_LEN; // 需要读满的次数
             int left = contentLen % CONTENT_BUFF_LEN; // 最后剩余

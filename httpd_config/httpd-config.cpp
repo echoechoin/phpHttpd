@@ -22,7 +22,7 @@ HttpdConfig::HttpdConfig(){
   configFileStream.close();
   neb::CJsonObject configJsonObject(configStr);
   if(configJsonObject.IsEmpty()){
-    std::cout << configJsonObject.GetErrMsg() << std::endl;
+    std::cout << "json parse error: " << configJsonObject.GetErrMsg() << std::endl;
     exit(-1);
   }
   /* ip */
@@ -42,10 +42,6 @@ HttpdConfig::HttpdConfig(){
   configJsonObject["phpConfig"]("entraceFilePath").length() != 0 ?
     this->phpEntraceFilePath = configJsonObject["phpConfig"]("entraceFilePath") :
     this->phpEntraceFilePath = "./++++++++++++++++++++++++++++++++++++++++==";
-  /* fcgi socket path */
-  configJsonObject["phpModeConfig"]("fastcigSocketFilePath").length() != 0 ?
-    this->phpFastcigSocketFilePath = configJsonObject["phpConfig"]("fastcigSocketFilePath") :
-    this->phpFastcigSocketFilePath = "./+++++++++++++++++++++++++++++++++++++++++";
 
   /* log file path */
   configJsonObject["debug"]("logFilePath").length() != 0 ?
@@ -75,6 +71,11 @@ HttpdConfig::HttpdConfig(){
   configJsonObject["phpModeConfig"]("entraceFileName").length() != 0 ?
   this->phpEntraceFileName = configJsonObject["phpModeConfig"]("entraceFileName") :
   this->phpEntraceFileName = "index.php";
+
+  /* phpSocketFile */
+  configJsonObject["phpModeConfig"]("fastcigSocketFilePath").length() != 0 ?
+  this->phpSocketFile = configJsonObject["phpModeConfig"]("fastcigSocketFilePath") :
+  this->phpSocketFile = "/run/php/php7.0-fpm.sock";
 }
 HttpdConfig::~HttpdConfig(){
   std::cout << "destructor" << std::endl;
@@ -147,26 +148,59 @@ int HttpdConfig::getLogMode(){
   else 
     return 1;
 }
+/**
+ * @brief 获取服务器静态文件模式下跟路径
+ * @return string
+ * 
+ */
 std::string HttpdConfig::getRootPath(){
   return this->rootPath;
 }
+/**
+ * @brief 获取服务器静态文件模式下指定根路径时访问的默认文件
+ * @return string
+ * 
+ */
 std::string HttpdConfig::getDefaultFile(){
   return this->defaultFile;
 }
+/**
+ * @brief 获取服务器php模式下跟路径
+ * @return string
+ * 
+ */
 std::string HttpdConfig::getEntraceFilePath(){
   return this->phpEntraceFilePath;
 }
+/**
+ * @brief 获取服务器php模式下指定根路径时访问的默认文件
+ * @return string
+ * 
+ */
 std::string HttpdConfig::getEntraceFileName(){
   return this->phpEntraceFileName;
 }
+/**
+ * @brief 获取服务器php模式下php-fpm套接字所在路径
+ * @return string
+ * 
+ */
+std::string HttpdConfig::getPhpSocketFile(){
+  return this->phpSocketFile;
+}
 void HttpdConfig::configCheck(){
   std::cout.setf(std::ios::left);
+  // std::cout << std::endl;
+  std::cout << ">> \033[36m"<< "checking config..." << "\033[0m" << std::endl;
   std::cout.width(25); std::cout << "listenAddress" << this->listenAddress << std::endl;
   std::cout.width(25); std::cout << "listenPort" << this->listenPort << std::endl;
   std::cout.width(25); std::cout << "logFilePath" << this->logFilePath << std::endl;
   std::cout.width(25); std::cout << "logMode" << this->logMode << std::endl;
-  std::cout.width(25); std::cout << "phpEntraceFilePath" << this->phpEntraceFilePath << std::endl;
-  std::cout.width(25); std::cout << "phpFastcigSocketFilePath" << this->phpFastcigSocketFilePath << std::endl;
   std::cout.width(25); std::cout << "serverMode" << this->serverMode << std::endl;
-  std::cout.width(25); std::cout << "serverMode" << this->rootPath << std::endl;
+
+  std::cout.width(25); std::cout << "defaultEntraceFilePath" << this->rootPath << std::endl;
+  std::cout.width(25); std::cout << "defaultEntraceFileName" << this->defaultFile << std::endl;
+  std::cout.width(25); std::cout << "phpEntraceFilePath" << this->phpEntraceFilePath << std::endl;
+  std::cout.width(25); std::cout << "phpEntraceFileName" << this->phpEntraceFileName << std::endl;
+  std::cout.width(25); std::cout << "phpSocketFile" << this->phpSocketFile << std::endl;
 }

@@ -22,6 +22,7 @@ class HttpdConfig{
     std::string getEntraceFileName();
     int getLogMode();
     void configCheck();
+    std::string getPhpSocketFile();
   private:
     HttpdConfig();
 
@@ -32,7 +33,7 @@ class HttpdConfig{
 
     std::string phpEntraceFilePath;              ///< php入口文件路径
     std::string phpEntraceFileName;              ///< php入口文件
-    std::string phpFastcigSocketFilePath;        ///< php fastcgi本地套接字路径
+    std::string phpSocketFile;                   ///< php fastcgi本地套接字路径
     std::string serverMode;                      ///< 是否为php模式 php：指定php入口地址，default：指定文件跟路径
 
     std::string rootPath;                        ///< 静态web服务器的根路径
@@ -41,7 +42,6 @@ class HttpdConfig{
 
     std::string logFilePath;                     ///< 日志文件保存地址
     std::string logMode;                         ///< 文件还是直接输出日志 stdout | file
-    
 };
 
 #endif
